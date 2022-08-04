@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Toolbar } from "@mui/material";
 import ComponentCarousel from "../components/ComponentCarousel";
 import ComponentList from "../components/ComponentList";
+import React from 'react';
 
 const Home = () => {
 

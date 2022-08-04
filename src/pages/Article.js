@@ -1,6 +1,6 @@
-import { CircularProgress, Grid } from "@mui/material";
-import { Container } from "postcss";
+import { CircularProgress, Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import React from 'react';
 import CardArticle from "../components/CardArticle";
 import apis from "../services/Apis";
 

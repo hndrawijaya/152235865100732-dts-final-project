@@ -1,4 +1,5 @@
 import NewList from "../components/NewList";
+import React from 'react';
 
 const NewRecipes = () => {        
         return (

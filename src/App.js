@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import Detail from './pages/Detail';
 import NewRecipes from './pages/New';
 import Article from './pages/Article';
+import Search from './pages/Search';
 
 function App() {
   return (    
@@ -21,7 +22,7 @@ function App() {
           <Routes>
               <Route path='/' 
                 element={
-                  <ProtectedRoute >
+                  <ProtectedRoute loginOnly={false}>
                     <Home />
                   </ProtectedRoute>
               } />
@@ -41,10 +42,11 @@ function App() {
                 </ProtectedRoute>
               } />
               <Route path='detail/:id' element={
-                <ProtectedRoute loginOnly={false}>
+                <ProtectedRoute>
                  <Detail />
                 </ProtectedRoute>
-            } />
+              } />
+              <Route path='search/:key' element={<Search />} />
               <Route path='register' element={
                 <ProtectedRoute loginOnly={false}>
                   <Register />

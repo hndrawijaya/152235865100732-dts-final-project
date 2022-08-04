@@ -2,6 +2,7 @@ import { AccessTime, BakeryDining, RiceBowl } from "@mui/icons-material";
 import { Chip, CircularProgress, Container, Grid, IconButton, ImageListItem, ImageListItemBar, Paper, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ListBahan from "../components/ListBahan";
 import apis from "../services/Apis";
 
 const Detail = () => {        
@@ -64,17 +65,17 @@ const Detail = () => {
                                 <Typography variant="body2" gutterBottom textAlign={"justify"}>
                                         {response.desc} 
                                 </Typography>
+                                <Typography variant="button" display="block" gutterBottom  textAlign={"justify"} mt={2}>
+                                        Bahan yang digunakan :
+                                </Typography>
+                                <ListBahan data={response.ingredient} />
+                                <Typography variant="button" display="block" gutterBottom  textAlign={"justify"} mt={2}>
+                                        Langkah pembuatan :
+                                </Typography>
+                                <ListBahan data={response.step} />
                                 </Paper>
                         </Grid>
                         <Grid item xs={12} md={4} lg={3}>
-                                <Paper
-                                sx={{
-                                p: 2,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                }}
-                                >
-                                </Paper>
                         </Grid>
                         </Grid>
                 </Container>

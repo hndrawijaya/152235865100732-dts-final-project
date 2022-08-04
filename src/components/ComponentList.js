@@ -82,6 +82,7 @@ const ComponentLIst = (props) => {
                 <Box sx={{ minWidth: 100 }}>
                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                         <InputLabel htmlFor="category">Filter Category:</InputLabel>
+                        {loadingCategory ? '' :
                         <Select
                         id="category"
                         defaultValue=""
@@ -90,13 +91,13 @@ const ComponentLIst = (props) => {
                         <MenuItem disabled value="">
                         <em>Select Category</em>
                         </MenuItem>
-                        {loadingCategory ? '' : 
-                        response.map((data) => (
+                        {response.map((data) => (
                         <MenuItem value={data.key}>
                                 {data.category}
                         </MenuItem>
                         ))}
                         </Select>
+                        }
                 </FormControl>
                 </Box>
           </Box>

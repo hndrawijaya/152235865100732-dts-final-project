@@ -19,7 +19,6 @@ import { useNavigate } from 'react-router-dom';
 const navItems = [
   { text: 'Home', link: '/' },
   { text: 'New Receipt', link: '/new' },
-  { text: 'Article', link: '/article' },
 ];
 
 

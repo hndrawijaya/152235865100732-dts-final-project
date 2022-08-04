@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Carousel from "better-react-carousel";
 import { Link } from 'react-router-dom';
 import apis from '../services/Apis';
-import { Chip, Stack } from '@mui/material';
+import { Chip, CircularProgress, Container, Stack } from '@mui/material';
 import { AccessTime, BakeryDining, RiceBowl } from '@mui/icons-material';
 
 const ComponentCarousel = () => {
@@ -21,12 +21,13 @@ const ComponentCarousel = () => {
                         setloading(false);
                 }
         }
-        
+
         useEffect(() => {
                 fetchData(url);
         }, [url]);
 
     return (
+        loading ? <><Container><CircularProgress color="inherit" /></Container></> :
         <Carousel
         scrollSnap={true}
         cols={1}

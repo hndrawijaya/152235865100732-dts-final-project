@@ -1,5 +1,7 @@
 import {
   Box,
+  CircularProgress,
+  Container,
   FormControl,
   Grid,
   InputLabel,
@@ -57,7 +59,9 @@ const ComponentLIst = (props) => {
         useEffect(() => {
                 fetchDataCategory(urlCat);
         }, [urlCat]);
+
   return (
+        loading ? <><Container><CircularProgress color="inherit" /></Container></> :
     <>
       <Grid
         container
@@ -86,7 +90,8 @@ const ComponentLIst = (props) => {
                         <MenuItem disabled value="">
                         <em>Select Category</em>
                         </MenuItem>
-                        {response.map((data) => (
+                        {loadingCategory ? '' : 
+                        response.map((data) => (
                         <MenuItem value={data.key}>
                                 {data.category}
                         </MenuItem>

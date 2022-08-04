@@ -1,5 +1,5 @@
 import { AccessTime, BakeryDining, RiceBowl } from "@mui/icons-material";
-import { Chip, Container, Grid, IconButton, ImageListItem, ImageListItemBar, Paper, Stack, Typography } from "@mui/material";
+import { Chip, CircularProgress, Container, Grid, IconButton, ImageListItem, ImageListItemBar, Paper, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import apis from "../services/Apis";
@@ -27,6 +27,7 @@ const Detail = () => {
         }, [url]);
 
         return (
+                loading ? <><Container><CircularProgress color="inherit" /></Container></> :
                 <Container maxWidth="lg" sx={{ mt: 10, mb: 4 }}>
                         <Grid container spacing={2}>
                         <Grid item xs={12} md={8} lg={9}>

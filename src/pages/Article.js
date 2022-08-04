@@ -1,4 +1,5 @@
-import { Grid } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
+import { Container } from "postcss";
 import { useEffect, useState } from "react";
 import CardArticle from "../components/CardArticle";
 import apis from "../services/Apis";
@@ -25,6 +26,7 @@ const Article = () => {
         }, [url]);
 
         return (
+                loading ? <><Container><CircularProgress color="inherit" /></Container></> :
                 <Grid container spacing={2}>
                 {response.map((data) => {
                         return (

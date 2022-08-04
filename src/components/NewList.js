@@ -1,4 +1,6 @@
 import {
+        CircularProgress,
+        Container,
   Grid,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -28,6 +30,7 @@ const NewList = (props) => {
         }, [url]);
 
   return (
+        loading ? <><Container><CircularProgress color="inherit" /></Container></> :
     <>
       <Grid
         container
